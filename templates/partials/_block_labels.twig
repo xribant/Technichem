@@ -1,0 +1,27 @@
+<section class="wrapper bg-light">
+  <div class="container py-14 py-md-16">
+    <div class="row">
+        <div class="col-md-10 col-lg-12">
+          <h3 class="display-4 mb-10">CONFORMITÉ, GARANTIE, QUALITÉ ET PERFORMANCE DES PRODUITS PLUS DE 100 RAPPORTS D'ESSAIS</h3>
+          <h2 class="fs-15 text-uppercase text-muted mb-3">La qualité des produits TECHNICHEM est garantie par divers validations, approbations et rapports d'essais. Tout produit qui sort de nos usines est soumis par notre laboratoire à un test de qualité et de conformité selon des normes de contrôles européennes.</h2>
+        </div>
+        <!-- /column -->
+      </div>
+    <!-- /.row -->
+    <div class="swiper-container clients" style="margin-top: 2rem;" data-margin="100" data-dots="false" data-loop="true" data-autoplay="true" data-autoplaytime="1" data-drag="false" data-speed="5000" data-items-xxl="5" data-items-xl="5" data-items-lg="5" data-items-md="4" data-items-xs="2">
+      <div class="swiper">
+        <div class="swiper-wrapper ticker">
+
+          {% for label in labels %}
+            <div class="swiper-slide px-5"><img src="/assets/media/{{ label.logo }}" alt="" /></div>
+          {% endfor %}
+        </div>
+        <!--/.swiper-wrapper -->
+      </div>
+      <!-- /.swiper -->
+    </div>
+    <!-- /.swiper-container -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /section -->

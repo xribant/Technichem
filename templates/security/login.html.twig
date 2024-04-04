@@ -1,0 +1,66 @@
+{% extends 'admin/_admin_base.html.twig' %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block body %}
+	<!-- start: page -->
+	<section class="body-sign">
+		<div class="center-sign">
+			<a href="/" class="logo float-left">
+				<img src="{{ asset('build/images/logo-technichem.png') }}" height="70" alt="Technichem Admin" />
+			</a>
+			<div class="panel card-sign">
+				<div class="card-title-sign mt-3 text-end">
+					<h2 class="title text-uppercase font-weight-bold m-0"><i class="bx bx-user-circle me-1 text-6 position-relative top-5"></i> Connexion</h2>
+				</div>
+				<div class="card-body">
+					<form method="post">
+						<div class="form-group mb-3">
+							<label>E-Mail</label>
+							<div class="input-group">
+								<input value="{{ last_username }}" name="_username" id="username" type="text" title="Veuillez entrer votre nom d'utilisateur" class="form-control form-control-lg" autocomplete="email" required autofocus />
+								<span class="input-group-text">
+									<i class="bx bx-user text-4"></i>
+								</span>
+							</div>
+						</div>
+
+						<div class="form-group mb-3">
+							<div class="clearfix">
+								<label class="float-left">Mot de passe</label>
+								<a href="pages-recover-password.html" class="float-end">Mot de passe perdu?</a>
+							</div>
+							<div class="input-group">
+								<input name="_password" id="password" type="password" class="form-control form-control-lg" autocomplete="current-password" required />
+								<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+								<span class="input-group-text">
+									<i class="bx bx-lock text-4"></i>
+								</span>
+							</div>
+							
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="checkbox-custom checkbox-default">
+									<input name="_remember_me" type="checkbox"/>
+									<label for="RememberMe">Se souvenir de moi</label>
+								</div>
+							</div>
+							<div class="col-sm-4 text-end">
+								<button type="submit" class="btn btn-primary mt-2">Login</button>
+							</div>
+						</div>
+						
+					</form>
+				</div>
+			</div>
+			{% if error %}
+				<div class="alert alert-danger mt-3">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+			<p class="text-center text-muted mt-3 mb-3">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Tous droits réservés</p>
+		</div>
+	</section>
+	<!-- end: page -->
+
+{% endblock %}

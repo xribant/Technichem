@@ -1,0 +1,46 @@
+<section class="wrapper bg-light">
+  <div class="container py-14 py-md-16 text-left">
+    <div class="row">
+      <div class="col-md-10 col-lg-12 mb-5">
+        <h1 class"display-1">
+            <span class="typer text-primary" data-delay="100" data-words="Nos produits"></span>
+            <span class="cursor text-primary" data-owner="typer"></span>
+        </h1>
+        <h2 class="fs-15 text-uppercase text-navy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu metus vel justo accumsan ultricies. Pellentesque est metus, venenatis ac sapien eget, ultrices accumsan augue.</h2>
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+    <div class="position-relative">
+      <div class="row gx-md-5 gy-5 text-center">
+
+        {% for category in product_categories.getAll %}
+          <div class="col-md-3 col-xl-3">
+          <div class="card shadow-lg h-100">
+            {% if category.image %}
+                <figure class="hover-scale">
+                    <a href="{{ path('products_category_page', {'category_slug': category.slug }) }}"><img src="assets/media/{{ category.image }}" class="card-img-top" alt="" /></a>
+                </figure>
+            {% else %}
+                <figure class="hover-scale">
+                    <a href="{{ path('products_category_page', {'category_slug': category.slug }) }}"><img src="{{ asset('img/placeholder_image_720_500.png') }}" class="card-img-top" alt="" /></a>
+                </figure>
+            {% endif %}
+                <div class="card-body">
+                    <h2 class="fs-15 text-uppercase text-navy"><a href="{{ path('products_category_page', {'category_slug': category.slug }) }}" class="hover link-body">{{ category.name }}</a></h2>
+                </div>
+            <!--/.card-body -->
+          </div>
+          <!--/.card -->
+          </div>
+        {% endfor %}
+       
+        <!--/column -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.position-relative -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /section -->

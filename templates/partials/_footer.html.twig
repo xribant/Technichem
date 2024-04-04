@@ -1,0 +1,88 @@
+<div class="footer_background" style="background-image:url({{ asset('images/footer_background.png') }})"></div>
+<div class="container">
+	<div class="row footer_row">
+		<div class="col">
+			<div class="footer_content">
+				<div class="row">
+
+					<div class="col-lg-4 footer_col">
+			
+						<!-- Footer About -->
+						<div class="footer_section footer_about">
+							<div class="footer_logo_container">
+								<img src="{{ asset('images/logo-technichem-white-39-ans.png') }}" alt="Logo Technichem">
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="col-lg-4 footer_col">
+
+						<!-- Footer links -->
+						<div class="footer_section footer_links">
+							<div class="footer_title">NOS PRODUITS</div>
+							<div class="footer_links_container">
+								<ul>
+									<li><a href="#">Hydrofuges incolores</a></li>
+									<li><a href="#">Remontées capilaires</a></li>
+									<li><a href="#">Traitement anti-salpêtre</a></li>
+									<li><a href="#">Rénovation toitures</a></li>
+									<li><a href="#">Insecticide / Termicide / Mérule</a></li>
+									<li><a href="#">Rénovation des bois</a></li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="col-lg-4 footer_col">
+			
+						<!-- Footer Contact -->
+						<div class="footer_section footer_contact">
+							<div class="footer_title">CONTACTEZ-NOUS</div>
+							<div class="footer_contact_info">
+								<ul>
+									<li>{{ company_details.data.email }}</li>
+									<li>{{ company_details.data.phone2 }}</li>
+									<li>{{ company_details.data.address }}, <br> {{ company_details.data.postalCode }} {{ company_details.data.city }}</li>
+								</ul>
+							</div>
+								<div class="footer_social">
+								<ul>
+									{% for item in social_networks.all %}
+										<li><a href="{{ item.link }}" title="{{ item.title }}" target="_blank"><i class="{{ item.icon }}"></i></a></li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="copyright_background">
+	<div class="container">
+		<div class="row copyright_row">
+			<div class="col">
+				<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+					<div class="cr_text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Tous droits réservés. | Wesite réalisé par  <a href="https://www.mywebcreation.be" target="_blank">My Web Création</a>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</div>
+					<div class="ml-lg-auto cr_links">
+						<ul class="cr_list">
+							<li><a href="">Mentions légales</a></li>
+							<li><a href="">Conditions générales de vente</a></li>
+							<li><a href="">Données personelles</a></li>
+							<li><a href="">Cookies</a></li>
+							<li><a href="">Conditions d'utilisation</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

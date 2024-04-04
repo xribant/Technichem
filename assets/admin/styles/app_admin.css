@@ -1,0 +1,9 @@
+@import '../vendor/bootstrap/css/bootstrap.css';
+@import '../vendor/animate/animate.compat.css';
+@import '../vendor/font-awesome-6.5.1/css/all.css';
+@import '../vendor/magnific-popup/magnific-popup.css';
+@import '../vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css';
+
+@import '../css/theme.css';
+@import '../css/skins/default.css';
+@import '../css/custom.css';

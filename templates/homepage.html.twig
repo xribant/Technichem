@@ -1,0 +1,239 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Des solutions de la cave à la toiture{% endblock %}
+
+{% block content %}
+<section class="wrapper bg-dark">
+  <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="7000" data-nav="true" data-dots="true" data-items="1">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {% for slide in page.slides %}
+        <div class="swiper-slide bg-overlay bg-overlay-400 bg-dark bg-image" data-image-src="assets/media/{{ slide.background }}">
+          <div class="container h-100">
+            <div class="row h-100">
+              <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
+                <h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">{{ slide.title }}</h2>
+                <p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">{{ slide.text }}</p>
+                {% if slide.link %}
+                  <div class="animate__animated animate__slideInUp animate__delay-3s"><a href="{{ slide.link }}" class="btn btn-lg btn-outline-white rounded-pill">En savoir plus</a></div>
+                {% endif %}
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!--/.container -->
+        </div>
+        <!--/.swiper-slide -->
+        {% endfor %}
+      
+        
+      </div>
+      <!--/.swiper-wrapper -->
+    </div>
+    <!-- /.swiper -->
+  </div>
+  <!-- /.swiper-container -->
+</section>
+
+{% include('partials/_index_product_categories.twig') %}
+
+<div class="d-flex flex-row align-items-center justify-content-center">
+  <img src="{{ asset('img/multicolor_separator.png') }}">
+</div>
+
+{% include('partials/_block_labels.twig') %}
+
+
+<!-- Catalog & Promotions -->
+
+
+
+
+<section class="wrapper bg-light">
+  <div class="container py-14 py-md-16">
+    <div class="row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-18 align-items-center">
+      <div class="col-lg-6 position-relative">
+        <div class="shape bg-line leaf rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="top: -2rem; right: -0.6rem;"></div>
+        <div class="shape bg-pale-violet rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="bottom: -2rem; left: -0.4rem;"></div>
+        <figure class="rounded mb-0"><img src="./assets/img/photos/se3.jpg" srcset="./assets/img/photos/se3@2x.jpg 2x" alt=""></figure>
+      </div>
+      <!--/column -->
+      <div class="col-lg-6">
+        <h3 class="display-4 mb-4">Package Design</h3>
+        <p class="mb-5">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius.</p>
+        <div class="row gy-3">
+          <div class="col-xl-6">
+            <ul class="icon-list bullet-bg bullet-soft-leaf mb-0">
+              <li><span><i class="uil uil-check"></i></span><span>Aenean quam ornare curabitur blandit consectetur.</span></li>
+              <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare aenean leo.</span></li>
+            </ul>
+          </div>
+          <!--/column -->
+          <div class="col-xl-6">
+            <ul class="icon-list bullet-bg bullet-soft-leaf mb-0">
+              <li><span><i class="uil uil-check"></i></span><span>Etiam porta euismod malesuada mollis nisl ornare sem.</span></li>
+              <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Vivamus sagittis lacus augue rutrum maecenas.</span></li>
+            </ul>
+          </div>
+          <!--/column -->
+        </div>
+        <!--/.row -->
+        <a href="#" class="btn btn-soft-leaf rounded-pill mt-6 mb-0">More Details</a>
+      </div>
+      <!--/column -->
+    </div>
+    <!--/.row -->
+    <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+      <div class="col-lg-6 order-lg-2 position-relative">
+        <div class="shape bg-line aqua rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="top: -2rem; left: -0.6rem;"></div>
+        <div class="shape bg-pale-red rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="bottom: -2rem; right: -0.4rem;"></div>
+        <figure class="rounded mb-0"><img src="./assets/img/photos/se4.jpg" srcset="./assets/img/photos/se4@2x.jpg 2x" alt=""></figure>
+      </div>
+      <!--/column -->
+      <div class="col-lg-6">
+        <h3 class="display-4 mb-4">Corporate Design</h3>
+        <p class="mb-5">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <div class="row gy-3">
+          <div class="col-xl-6">
+            <ul class="icon-list bullet-bg bullet-soft-aqua mb-0">
+              <li><span><i class="uil uil-check"></i></span><span>Aenean quam ornare curabitur blandit consectetur.</span></li>
+              <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare aenean leo.</span></li>
+            </ul>
+          </div>
+          <!--/column -->
+          <div class="col-xl-6">
+            <ul class="icon-list bullet-bg bullet-soft-aqua mb-0">
+              <li><span><i class="uil uil-check"></i></span><span>Etiam porta euismod malesuada mollis nisl ornare sem.</span></li>
+              <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Vivamus sagittis lacus augue rutrum maecenas.</span></li>
+            </ul>
+          </div>
+          <!--/column -->
+        </div>
+        <!--/.row -->
+        <a href="#" class="btn btn-soft-aqua rounded-pill mt-6 mb-0">More Details</a>
+      </div>
+      <!--/column -->
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /section -->
+
+
+
+
+<!-- System Cave J+1 -->
+
+<!-- /section -->
+    <section id="snippet-8" class="wrapper bg-light wrapper-border">
+      <div class="container pt-15 pt-md-17 pb-13 pb-md-15">
+        <div class="row gy-10 gy-sm-13 gx-md-8 gx-xl-12 align-items-center">
+          <div class="col-lg-6">
+            <div class="row gx-md-5 gy-5">
+              <div class="col-12">
+                <figure class="rounded mx-md-5"><img src="{{ asset('img/placeholder_image_690_439.png') }}" srcset="{{ asset('img/placeholder_image_690_439.png') }}" alt=""></figure>
+              </div>
+              <!--/column -->
+              <div class="col-md-6">
+                <figure class="rounded"><img src="{{ asset('img/placeholder_image_690_439.png') }}" srcset="{{ asset('img/placeholder_image_690_439.png') }}" alt=""></figure>
+              </div>
+              <!--/column -->
+              <div class="col-md-6">
+                <figure class="rounded"><img src="{{ asset('img/placeholder_image_690_439.png') }}" srcset="{{ asset('img/placeholder_image_690_439.png') }}" alt=""></figure>
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!--/column -->
+          <div class="col-lg-6">
+            <h2 class="fs-16 text-uppercase text-muted mb-3">What Makes Us Different?</h2>
+            <h3 class="display-3 mb-10">We bring <span class="underline-3 style-2 yellow">solutions</span> to make life easier for our customers.</h3>
+            <div class="row gy-8">
+              <div class="col-md-6">
+                <div class="d-flex flex-row">
+                  <div>
+                    <img src="../../assets/img/icons/solid/lamp.svg" class="svg-inject icon-svg icon-svg-xs solid-mono text-fuchsia me-4" alt="" />
+                  </div>
+                  <div>
+                    <h4 class="mb-1">Creativity</h4>
+                    <p class="mb-0">Curabitur blandit lacus porttitor ridiculus mus.</p>
+                  </div>
+                </div>
+              </div>
+              <!--/column -->
+              <div class="col-md-6">
+                <div class="d-flex flex-row">
+                  <div>
+                    <img src="../../assets/img/icons/solid/bulb.svg" class="svg-inject icon-svg icon-svg-xs solid-mono text-violet me-4" alt="" />
+                  </div>
+                  <div>
+                    <h4 class="mb-1">Innovative Thinking</h4>
+                    <p class="mb-0">Curabitur blandit lacus porttitor ridiculus mus.</p>
+                  </div>
+                </div>
+              </div>
+              <!--/column -->
+              <div class="col-md-6">
+                <div class="d-flex flex-row">
+                  <div>
+                    <img src="../../assets/img/icons/solid/puzzle.svg" class="svg-inject icon-svg icon-svg-xs solid-mono text-orange me-4" alt="" />
+                  </div>
+                  <div>
+                    <h4 class="mb-1">Rapid Solutions</h4>
+                    <p class="mb-0">Curabitur blandit lacus porttitor ridiculus mus.</p>
+                  </div>
+                </div>
+              </div>
+              <!--/column -->
+              <div class="col-md-6">
+                <div class="d-flex flex-row">
+                  <div>
+                    <img src="img/icons/solid/headphone.svg" class="svg-inject icon-svg icon-svg-xs solid-mono text-green me-4" alt="" />
+                  </div>
+                  <div>
+                    <h4 class="mb-1">Top-Notch Support</h4>
+                    <p class="mb-0">Curabitur blandit lacus porttitor ridiculus mus.</p>
+                  </div>
+                </div>
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!--/column -->
+        </div>
+        <!--/.row -->
+      </div>
+    </section>
+    <!-- /section -->
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
+              <img src="{{ asset('img/techniman01.png') }}" alt="">
+              <!-- Newsletter Content -->
+              <div class="newsletter_content text-lg-left text-center">
+                <div class="newsletter_title">Inscrivez-vous à notre newsletter !</div>
+              </div>
+
+              <!-- Newsletter Form -->
+              <div class="newsletter_form_container ml-lg-auto">
+                <form action="#" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
+                  <input type="email" class="newsletter_input" placeholder="Votre e-mail" required="required">
+                  <button type="submit" class="newsletter_button">Envoyer</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /newsletter -->
+{% endblock %}

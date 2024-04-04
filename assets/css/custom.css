@@ -1,0 +1,261 @@
+.top_bar_logo {
+    width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.top_bar_search_button i
+{
+    font-size: 18px;
+	color: #fff;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.top_bar_search_button:hover i
+{
+	color: #fff;
+}
+.top_bar_search_input
+{
+	width: 100%;
+	height: 40px;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	padding-left: 20px;
+}
+.top_bar_search_button
+{
+    background-color: grey;
+	position: absolute;
+	top: 0;
+	right: 0; 
+	height: 40px;
+	border: none;
+	outline: none;
+	border-radius: 0 20px 20px 0;
+	cursor: pointer;
+}
+
+.nav_logo {
+    width: 80%;
+    height: auto;
+}
+
+.navbar-nav .btn-primary {
+    background-color: #0094d4;
+    border: 0;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0094d4;
+}
+
+.navbar-nav i {
+    padding-right: 5px;
+    font-size: 18px;
+}
+
+/****************************** FOOTER ***********************************/
+
+.footer-background
+{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.footer-logo {
+	max-height:200px;
+}
+
+.footer-background .widget a:hover {
+	color: #04689b;
+}
+
+.copyright_background {
+	background-color: #04689b;
+}
+.copyright
+{
+	height: 54px;
+}
+.copyright div
+{
+	font-size: 14px;
+	color: #fff;
+}
+.cr_text a
+{
+	color: #FFFFFF;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.cr_text a:hover
+{
+	color: #14bdee;
+}
+.cr_links ul {
+	display: table-cell;
+    vertical-align: middle;
+}
+.cr_links li
+{
+	display: inline-block;
+}	
+.cr_links li:not(:last-child)
+{
+	margin-right: 50px;
+}
+.cr_links li a
+{
+	font-size: 14px;
+	color: #fff;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.cr_links li a:hover
+{
+	color: #14bdee;
+}
+
+/*********************** Newsletter ************************/
+
+.newsletter
+{
+	width: 100%;
+	background-color: #f7a607;
+}
+.newsletter_background
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.newsletter_container
+{
+	width: 100%;
+	min-height: 100px;
+}
+.newsletter_container img
+{
+	height: 240px;
+	position: absolute;
+	margin-left: -50px;
+	margin-bottom: 99px;
+	z-index: 9999;
+}
+@media screen and (max-width: 600px) { 
+
+	.newsletter_container img
+	{
+		display: none;
+	}
+
+	.newsletter_container
+	{
+		padding: 20px;
+	}
+
+	.newsletter_title
+	{
+		font-size: 15px;
+	}
+
+}
+.newsletter_title
+{
+	margin-left: 200px;
+	font-size: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+.newsletter_subtitle
+{
+	font-size: 14px;
+	font-weight: 400;
+	color: #FFFFFF;
+	margin-top: 6px;
+}
+.newsletter_form_container
+{
+	width: 450px;
+	padding-left: 20px;
+}
+.newsletter_form
+{
+	display: block;
+	position: relative;
+	width: 100%;
+}
+.newsletter_input
+{
+	width: calc(100% - 136px);
+	height: 40px;
+	background: rgba(255,255,255,0.4);
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	color: #FFFFFF;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.newsletter_input::-webkit-input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	color: #FFFFFF !important;
+}
+.newsletter_input:-moz-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	color: #FFFFFF !important;
+}
+.newsletter_input::-moz-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	color: #FFFFFF !important;
+} 
+.newsletter_input:-ms-input-placeholder
+{ 
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	color: #FFFFFF !important;
+}
+.newsletter_input::input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	color: #FFFFFF !important;
+}
+.newsletter_button
+{
+	width: 136px;
+	height: 40px;
+	background: #FFFFFF;
+	border-radius: 3px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #14bdee;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+}

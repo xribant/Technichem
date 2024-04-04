@@ -1,0 +1,42 @@
+<section class="wrapper bg-light">
+  <div class="container py-14 py-md-16 text-left">
+    <div class="row">
+      <div class="col-md-10 col-lg-12">
+        <h1 class="display-6 text-uppercase text-muted mb-3">Pour vos chantiers...</h1>
+        <h3 class="display-4 mb-10 px-xl-10">Exigez les produits TECHNICHEM PROFESSIONNELS et PARTICULIERS</h3>
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+    <div class="position-relative">
+      <div class="row gx-md-5 gy-5 text-center">
+
+        {% for category in product_categories.getAll %}
+          <div class="col-md-3 col-xl-2">
+          <div class="card shadow-lg h-100">
+            <img src="#" class="card-img-top" alt="" />
+            <div class="card-body">
+            <h2 class="fs-15 text-uppercase text-navy">{{ category.name }}</h2>
+            </div>
+            <!--/.card-body -->
+          </div>
+          <!--/.card -->
+          </div>
+        {% endfor %}
+       
+        <!--/column -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.position-relative -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /section -->
+
+
+
+
+
+
+

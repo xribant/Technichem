@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+ <section class="wrapper bg-gradient-reverse-primary text-white" style="height: 11rem;">
+    <div class="container pt-10 pb-19 pt-md-14 pb-md-20 text-center">
+        <div class="row">
+            <div class="col-sm-10 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mx-auto">
+            <h1 class="display-1 mb-3 text-uppercase">{{ product.name }}</h1>
+            <nav class="d-inline-block" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_homepage') }}">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('our_products_page') }}">Nos produits</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('products_category_page', { 'category_slug': product.category.slug }) }}">{{ product.category.name }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+                </ol>
+            </nav>
+            <!-- /nav -->
+            </div>
+            <!-- /column -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+
+<section class="wrapper bg-light">
+      <div class="container py-14 py-md-16">
+        <div class="row gx-md-8 gx-xl-12 gy-8">
+          <div class="col-lg-6">
+            <div class="swiper-container swiper-thumbs-container" data-margin="10" data-dots="false" data-nav="true" data-thumbs="true">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  {% for image in product.productImages %}
+                     <div class="swiper-slide">
+                        <figure class="rounded"><img src="{{ vich_uploader_asset(image, 'imageFile') }}" srcset="{{ vich_uploader_asset(image, 'imageFile') }} 2x" alt="" /><a class="item-link" href="{{ vich_uploader_asset(image, 'imageFile') }}" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure>
+                    </div>
+                  {% endfor %}
+                    <div class="swiper-slide">
+                        <figure class="rounded"><img src="./assets/img/photos/shs1.jpg" srcset="./assets/img/photos/shs1@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/shs1@2x.jpg" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure>
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                        <figure class="rounded"><img src="./assets/img/photos/shs2.jpg" srcset="./assets/img/photos/shs2@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/shs2@2x.jpg" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure>
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                        <figure class="rounded"><img src="./assets/img/photos/shs3.jpg" srcset="./assets/img/photos/shs3@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/shs3@2x.jpg" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure>
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                        <figure class="rounded"><img src="./assets/img/photos/shs4.jpg" srcset="./assets/img/photos/shs4@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/shs4@2x.jpg" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure>
+                    </div>
+                    <!--/.swiper-slide -->
+                </div>
+                <!--/.swiper-wrapper -->
+              </div>
+              <!-- /.swiper -->
+              <div class="swiper swiper-thumbs">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="./assets/img/photos/shs1-th.jpg" srcset="./assets/img/photos/shs1-th@2x.jpg 2x" class="rounded" alt="" /></div>
+                  <div class="swiper-slide"><img src="./assets/img/photos/shs2-th.jpg" srcset="./assets/img/photos/shs2-th@2x.jpg 2x" class="rounded" alt="" /></div>
+                  <div class="swiper-slide"><img src="./assets/img/photos/shs3-th.jpg" srcset="./assets/img/photos/shs3-th@2x.jpg 2x" class="rounded" alt="" /></div>
+                  <div class="swiper-slide"><img src="./assets/img/photos/shs4-th.jpg" srcset="./assets/img/photos/shs4-th@2x.jpg 2x" class="rounded" alt="" /></div>
+                </div>
+                <!--/.swiper-wrapper -->
+              </div>
+              <!-- /.swiper -->
+            </div>
+            <!-- /.swiper-container -->
+          </div>
+          <!-- /column -->
+          <div class="col-lg-6">
+            <div class="post-header mb-5">
+              <h2 class="post-title display-5"><a href="./shop-product.html" class="link-dark">{{ product.name }}</a></h2>
+              <p class="price fs-20 mb-2"><span class="amount">$55.00</span></p>
+              <a href="#" class="link-body ratings-wrapper"><span class="ratings four"></span><span>(3 Reviews)</span></a>
+            </div>
+            <!-- /.post-header -->
+            <p class="mb-6">Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Duis mollis, est non commodo luctus. Nulla vitae elit libero pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+            <form>
+              <fieldset class="picker">
+                <legend class="h6 fs-16 text-body mb-3">Choose a size</legend>
+                <label for="size-xs">
+                  <input type="radio" name="sizes" id="size-xs" checked>
+                  <span>XS</span>
+                </label>
+                <label for="size-s">
+                  <input type="radio" name="sizes" id="size-s">
+                  <span>S</span>
+                </label>
+                <label for="size-m">
+                  <input type="radio" name="sizes" id="size-m">
+                  <span>M</span>
+                </label>
+                <label for="size-l">
+                  <input type="radio" name="sizes" id="size-l">
+                  <span>L</span>
+                </label>
+                <label for="size-xl">
+                  <input type="radio" name="sizes" id="size-xl">
+                  <span>XL</span>
+                </label>
+              </fieldset>
+              <fieldset class="picker">
+                <legend class="h6 fs-16 text-body mb-3">Choose a color</legend>
+                <label for="color-1" style="--color:#fab758">
+                  <input type="radio" name="colors" id="color-1" checked>
+                  <span>Yellow</span>
+                </label>
+                <label for="color-2" style="--color:#e2626b">
+                  <input type="radio" name="colors" id="color-2">
+                  <span>Red</span>
+                </label>
+                <label for="color-3" style="--color:#7cb798">
+                  <input type="radio" name="colors" id="color-3">
+                  <span>Green</span>
+                </label>
+                <label for="color-4" style="--color:#3f78e0">
+                  <input type="radio" name="colors" id="color-4">
+                  <span>Blue</span>
+                </label>
+                <label for="color-5" style="--color:#a07cc5">
+                  <input type="radio" name="colors" id="color-5">
+                  <span>Purple</span>
+                </label>
+              </fieldset>
+              <div class="row">
+                <div class="col-lg-9 d-flex flex-row pt-2">
+                  <div>
+                    <div class="form-select-wrapper">
+                      <select class="form-select">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                    <!--/.form-select-wrapper -->
+                  </div>
+                  <div class="flex-grow-1 mx-2">
+                    <button class="btn btn-primary btn-icon btn-icon-start rounded w-100 flex-grow-1"><i class="uil uil-shopping-bag"></i> Add to Cart</button>
+                  </div>
+                  <div>
+                    <button class="btn btn-block btn-red btn-icon rounded px-3 w-100 h-100"><i class="uil uil-heart"></i></button>
+                  </div>
+                </div>
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+            </form>
+            <!-- /form -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+        <ul class="nav nav-tabs nav-tabs-basic mt-12">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#tab1-1">Product Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab1-2">Additional Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab1-3">Delivery</a>
+          </li>
+        </ul>
+        <!-- /.nav-tabs -->
+        <div class="tab-content mt-0 mt-md-5">
+          <div class="tab-pane fade show active" id="tab1-1">
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper.</p>
+            <p>Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          </div>
+          <!--/.tab-pane -->
+          <div class="tab-pane fade" id="tab1-2">
+            <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <!--/.tab-pane -->
+          <div class="tab-pane fade" id="tab1-3">
+            <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+          </div>
+          <!--/.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+
+{% endblock %}

@@ -1,0 +1,23 @@
+<div class="bg-sky text-white fw-bold fs-15">
+    <div class="container py-1 d-md-flex flex-md-row">
+        <div class="d-flex flex-row align-items-center">
+            <img class="top_bar_logo" src="{{ asset('build/img/39-ans.png') }}">
+        </div>
+        <div class="d-flex flex-row align-items-center justify-content-center mx-auto w-25">
+            <form action="#" method="GET" class="header_search_form w-75">
+                <div class="input-group">
+                    <input type="text" class="form-control top_bar_search_input w-50" placeholder="Rechercher" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary top_bar_search_button" type="button" id="button-addon2"><i class="uil uil-search"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class="d-flex flex-row align-items-center me-6 ms-auto">
+            <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-phone-volume"></i></div>
+            <p class="mb-0">{{ company_details.data.phone1 }}</p>
+        </div>
+        <div class="d-flex flex-row align-items-center">
+            <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-message"></i></div>
+            <p class="mb-0"><a href="mailto:sandbox@email.com" class="link-white hover">{{ company_details.data.email }}</a></p>
+        </div>
+    </div>
+</div>

@@ -2,16 +2,124 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Techichem - {% block title %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+        <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
+ 
         {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+
     <body>
-        {% block body %}{% endblock %}
+        <div class="content-wrapper">
+            <header class="wrapper bg-light">
+            {% include('partials/_top_bar.html.twig') %}
+
+            {% include('partials/_nav_menu.html.twig') %}
+            </header>
+       
+            <!-- /header -->
+            {% block content %}
+            {% endblock %}    
+        
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="bg-sky text-inverse footer-background" style="background-image:url({{ asset('img/footer_background.png') }}">
+            <div class="container py-13 py-md-15">
+            <div class="row gy-6 gy-lg-0">
+                <div class="col-md-4 col-lg-4">
+                <div class="widget">
+                    <img class="mb-4 footer-logo" src="{{ asset('img/logo-technichem-white-39-ans.png') }}" srcset="{{ asset('img/logo-technichem-white-39-ans.png') }}" alt="Logo Technichem" />
+                    <!-- /.social -->
+                </div>
+                <!-- /.widget -->
+                </div>
+                <!-- /column -->
+                <div class="col-md-4 col-lg-4">
+                <div class="widget">
+                    <h4 class="widget-title text-white mb-3">Nos Produits</h4>
+                    {% set categories = product_categories.getAll %}
+                    <ul class="list-unstyled  mb-0">
+                    {% for category in categories %}
+                        <li><a href="#">{{ category.name }}</a></li>
+                    {% else %}
+                        <li><a href="#">Hydrofuges incolores</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <!-- /.widget -->
+                </div>
+                <!-- /column -->
+                <div class="col-md-4 col-lg-4">
+                <div class="widget">
+                    <h4 class="widget-title text-white mb-3">Contactez Nous</h4>
+                    {% set company = company_details.getData %}
+                    <address class="pe-xl-15 pe-xxl-17 text-white">{{ company.address }}, {{ company.postalCode }} {{ company.city }}</address>
+                    <a href="mailto:{{ company.email }}">{{ company.email }}</a><br />
+                    <a href="phone:#">{{ company.phone2 }}</a>
+                    <nav class="nav social social-white mt-3">
+                    {% set networks = social_networks.getAll %}
+                    {% for network in networks %}
+                        <a href="{{ network.link }}"><i class="{{ network.icon }}"></i></a>
+                    {% else %}
+                        <a href="#"><i class="uil uil-twitter"></i></a>
+                        <a href="#"><i class="uil uil-facebook-f"></i></a>
+                        <a href="#"><i class="uil uil-dribbble"></i></a>
+                        <a href="#"><i class="uil uil-instagram"></i></a>
+                        <a href="#"><i class="uil uil-youtube"></i></a>
+                    {% endfor %}
+                    </nav>
+                    <!-- /.social -->
+                </div>
+                <!-- /.widget -->
+                </div>
+                <!-- /column -->
+            
+            </div>
+            <!--/.row -->
+            </div>
+            <!-- /.container -->
+        </footer>
+        <div class="copyright_background">
+            <div class="container-fluid">
+                <div class="row copyright_row">
+                    <div class="col">
+                        <div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-center">
+                            <div class="cr_text">
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Tous droits réservés. | Wesite réalisé par  <a href="https://www.mywebcreation.be" target="_blank">My Web Création</a>
+                            </div>
+                            <div class="cr_links">
+                                <ul>
+                                    <li><a href="">Mentions légales</a></li>
+                                    <li><a href="">Conditions générales de vente</a></li>
+                                    <li><a href="">Données personelles</a></li>
+                                    <li><a href="">Cookies</a></li>
+                                    <li><a href="">Conditions d'utilisation</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+        <script src="./js/plugins.js"></script>
+        <script src="./js/theme.js"></script>
     </body>
 </html>

@@ -1,6 +1,11 @@
 twig:
     file_name_pattern: '*.twig'
 
+    globals:
+        social_networks: '@App\Services\SocialNetworks'
+        company_details: '@App\Services\CompanyDetails'
+        product_categories: '@App\Services\ProductCategories'
+
 when@test:
     twig:
         strict_variables: true
